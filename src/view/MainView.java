@@ -670,6 +670,7 @@ public class MainView extends JFrame{
     			
     			for(int i = 0; i < bucketLength; i++) {
     				  bucketArr[i].setVisible(false);
+    				  bucketArr[i].setNum(0);
     			}
     			
     			history.append("\nFinal Arr: ");
@@ -1438,24 +1439,24 @@ public class MainView extends JFrame{
 	  }
 
 	  public void bucketSort() {
-		  	for(int i = 0; i < bucketLength; i++) {
-			  bucketArr[i].setVisible(true);
-		  	}
+		  for(int i = 0; i < bucketLength; i++) {
+			 bucketArr[i].setVisible(true);
+		  }	  	
 			
-			moveYAnimation(0, arrLength - 1, labelArrDistance);
+		  moveYAnimation(0, arrLength - 1, labelArrDistance);
 			
-			for(int i = 0; i < arrLength; i++) {
-				int k = 0;
-		    	while(initArr[i] < bucketArr[k].getMin() || initArr[i] >= bucketArr[k].getMax()) {
-		    		k++;
-		    	}
-		    	moveToBucketAnimation(i, k);
-			}
+		  for(int i = 0; i < arrLength; i++) {
+			  int k = 0;
+			  while(initArr[i] < bucketArr[k].getMin() || initArr[i] >= bucketArr[k].getMax()) {
+		    	k++;
+		    }
+		    moveToBucketAnimation(i, k);
+		  }
 			
-			sortElementInBucket();
+		  sortElementInBucket();
 			
-			moveBackAnimation();	
+		  moveBackAnimation();	
             
-			markFinishedAll();
-		}	
+		  markFinishedAll();
+	  }	
 }
