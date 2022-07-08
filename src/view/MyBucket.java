@@ -38,6 +38,9 @@ public class MyBucket extends JLabel {
 		return numElementInBucket;
 	}
 	
+	public void setNum(int numElementInBucket) {
+		this.numElementInBucket = numElementInBucket;
+	}
 
 	public void addElement(int i) {
 		JL[numElementInBucket] = i;
